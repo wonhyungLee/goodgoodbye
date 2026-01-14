@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사랑하는 2-2반 친구들에게</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Serif+KR:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        body {
+            font-family: 'Noto Serif KR', serif;
+            background-color: #f3f0e9; /* Warm paper-like background */
+            overflow-x: hidden;
+        }
+        
+        .handwriting {
+            font-family: 'Gowun Batang', serif;
+        }
+
+        /* Fade In Animation */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-500 { animation-delay: 0.5s; }
+        .delay-700 { animation-delay: 0.7s; }
+        .delay-900 { animation-delay: 0.9s; }
+        .delay-1100 { animation-delay: 1.1s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Paper Texture Effect */
+        .paper-texture {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.5' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 0 40px rgba(0,0,0,0.05) inset;
+        }
+
+        /* Seal Animation */
+        .seal-stamp {
+            border: 2px solid #be123c;
+            color: #be123c;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            transform: rotate(-15deg);
+            font-weight: bold;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            mask-image: url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E");
+        }
+
+        /* Falling Petals Canvas */
+        #canvas-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .content-container {
+            position: relative;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="text-stone-800 antialiased min-h-screen flex flex-col items-center justify-center py-10 px-4 sm:px-6">
+
+    <!-- Background Animation Canvas -->
+    <div id="canvas-container">
+        <canvas id="petals"></canvas>
+    </div>
+
+    <!-- Main Letter Container -->
+    <main class="content-container w-full max-w-3xl bg-white paper-texture rounded-sm p-8 md:p-16 mb-10 relative">
+        
+        <!-- Decorative Top Border -->
+        <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-rose-200 via-rose-300 to-rose-200 opacity-60"></div>
+
+        <!-- Header -->
+        <header class="mb-10 text-center fade-in-up">
+            <div class="inline-block p-2 mb-4 rounded-full bg-rose-50 text-rose-400">
+                <i data-lucide="mail-open" class="w-8 h-8"></i>
+            </div>
+            <h1 class="text-2xl md:text-3xl font-bold text-stone-900 tracking-tight handwriting mb-2">
+                사랑하는 2-2반 친구들에게
+            </h1>
+            <div class="h-1 w-20 bg-rose-200 mx-auto mt-4 rounded-full"></div>
+        </header>
+
+        <!-- Intro -->
+        <section class="space-y-6 text-lg leading-relaxed text-stone-700 fade-in-up delay-100">
+            <p>
+                어느덧 우리가 함께한 1년이라는 시간이 훌쩍 지나갔구나. 
+                계절이 바뀌는 동안 몸도 마음도 훌쩍 자란 너희들을 보며 선생님은 참 뿌듯했단다.
+            </p>
+            <p>
+                헤어짐을 앞두고, 너희가 앞으로 살아가는 데 힘이 되어줄 <span class="text-rose-500 font-semibold decoration-rose-200 underline decoration-2 underline-offset-4">세 가지 이야기</span>를 꼭 전하고 싶어 펜을 들었다.
+            </p>
+        </section>
+
+        <!-- Three Points -->
+        <div class="mt-12 space-y-8">
+            
+            <!-- Point 1 -->
+            <div class="flex gap-4 fade-in-up delay-300 group">
+                <div class="shrink-0 mt-1">
+                    <span class="flex items-center justify-center w-8 h-8 rounded-full bg-stone-800 text-white font-bold text-sm">1</span>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-stone-900 mb-2 group-hover:text-rose-600 transition-colors duration-300">
+                        배움을 미리 포기하지 말렴
+                    </h3>
+                    <p class="text-stone-600 leading-relaxed text-justify">
+                        공부를 포함해 어떤 배움이든 절대 미리 포기하지 않았으면 해. 지금 당장 성적이 나오지 않거나 어렵게 느껴진다고 해서 "난 안 되나 봐"라고 단정 짓기에는 너무 이르단다. 사람의 두뇌는 여자는 20대 후반, 남자는 30대 초반까지도 계속 발달한다고 해. 너희의 능력은 아직 꽃피우지 않았을 뿐, 언제 갑자기 놀랍게 성장할지 아무도 모르는 거야. <span class="font-semibold text-stone-800 bg-rose-50 px-1">스스로의 가능성을 믿고 꾸준히 나아가길 바란다.</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Point 2 -->
+            <div class="flex gap-4 fade-in-up delay-500 group">
+                <div class="shrink-0 mt-1">
+                    <span class="flex items-center justify-center w-8 h-8 rounded-full bg-stone-800 text-white font-bold text-sm">2</span>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-stone-900 mb-2 group-hover:text-rose-600 transition-colors duration-300">
+                        성실함은 가장 큰 무기란다
+                    </h3>
+                    <p class="text-stone-600 leading-relaxed text-justify">
+                        성실한 태도가 곧 너희의 가장 큰 무기가 될 거야. 사회성은 단순히 친구가 많은 것이 아니라, 바른 인성에서 비롯된단다. 화려한 말솜씨보다 중요한 것은 항상 제자리에서 성실하게 임하는 모습이야. 당장은 아무도 몰라주는 것 같아도, <span class="font-semibold text-stone-800 bg-rose-50 px-1">묵묵히 노력하는 너의 진심은 언젠가 반드시 주변 사람들이 알아보고 인정해 주는 날이 온단다.</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Point 3 -->
+            <div class="flex gap-4 fade-in-up delay-700 group">
+                <div class="shrink-0 mt-1">
+                    <span class="flex items-center justify-center w-8 h-8 rounded-full bg-stone-800 text-white font-bold text-sm">3</span>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-stone-900 mb-2 group-hover:text-rose-600 transition-colors duration-300">
+                        나와 타인을 모두 존중하렴
+                    </h3>
+                    <p class="text-stone-600 leading-relaxed text-justify">
+                        나 자신과 타인을 모두 존중하는 사람이 되어라. 다른 사람을 존중한다고 해서 내가 낮아지거나 손해를 보는 것이 절대 아니란다. 오히려 주변 어른과 친구들을 존중할 때, 너 또한 그들로부터 깊은 존중을 받게 될 거야. <span class="font-semibold text-stone-800 bg-rose-50 px-1">나 자신을 소중히 여기는 만큼 타인도 귀하게 여기며</span> 건강한 관계를 맺어가는 멋진 사람이 되길 응원한다.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Divider -->
+        <hr class="border-t-2 border-dashed border-stone-200 my-10 fade-in-up delay-900">
+
+        <!-- Closing -->
+        <section class="text-center space-y-6 fade-in-up delay-900">
+            <p class="text-lg text-stone-700">
+                너희들의 담임이어서 행복했다.<br>
+                1년 동안 정말 고생 많았고,<br>
+                너희의 앞날에 늘 행운이 가득하기를 빈다.
+            </p>
+        </section>
+
+        <!-- Signature -->
+        <footer class="mt-16 flex flex-col items-end justify-center pr-4 md:pr-10 fade-in-up delay-1100 relative">
+            <div class="text-right">
+                <p class="text-sm text-stone-500 mb-2">사랑을 담아,</p>
+                <p class="text-2xl font-bold handwriting text-stone-800">이원형 선생님이</p>
+            </div>
+            <!-- Decorative Stamp -->
+            <div class="absolute -bottom-2 right-0 md:right-4 opacity-10 md:opacity-100 transform rotate-12 md:translate-x-1/2 translate-y-2 pointer-events-none">
+                <div class="seal-stamp handwriting">
+                    참 잘했어요
+                </div>
+            </div>
+        </footer>
+
+    </main>
+    
+    <div class="fixed bottom-4 text-stone-400 text-xs text-center fade-in-up delay-1100">
+        &copy; 2026. 선생님의 편지
+    </div>
+
+    <script>
+        // Icon Initialization
+        lucide.createIcons();
+
+        // Canvas Animation (Falling Petals)
+        const canvas = document.getElementById('petals');
+        const ctx = canvas.getContext('2d');
+        
+        let width, height;
+        let particles = [];
+
+        // Resize handling
+        function resize() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+
+        // Particle Class
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height - height; // Start above screen
+                this.size = Math.random() * 5 + 3; // Size between 3-8
+                this.speedX = Math.random() * 2 - 1; // Drift left/right
+                this.speedY = Math.random() * 1.5 + 0.5; // Fall speed
+                this.color = `rgba(251, 113, 133, ${Math.random() * 0.3 + 0.1})`; // Rose color with opacity
+                this.rotation = Math.random() * 360;
+                this.rotationSpeed = Math.random() * 2 - 1;
+            }
+
+            update() {
+                this.y += this.speedY;
+                this.x += Math.sin(this.y * 0.01) + this.speedX; // Sway motion
+                this.rotation += this.rotationSpeed;
+
+                if (this.y > height) {
+                    this.y = -20;
+                    this.x = Math.random() * width;
+                }
+            }
+
+            draw() {
+                ctx.save();
+                ctx.translate(this.x, this.y);
+                ctx.rotate(this.rotation * Math.PI / 180);
+                ctx.fillStyle = this.color;
+                
+                // Draw petal shape
+                ctx.beginPath();
+                ctx.moveTo(0, 0);
+                ctx.quadraticCurveTo(this.size, -this.size, 0, -this.size * 2);
+                ctx.quadraticCurveTo(-this.size, -this.size, 0, 0);
+                ctx.fill();
+                
+                ctx.restore();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            const particleCount = window.innerWidth < 768 ? 20 : 40; // Fewer particles on mobile
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', () => {
+            resize();
+            initParticles();
+        });
+
+        // Initialize
+        resize();
+        initParticles();
+        animate();
+
+    </script>
+</body>
+</html>
